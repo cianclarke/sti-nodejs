@@ -6,10 +6,11 @@ FROM openshift/base-rhel7
 MAINTAINER Jakub Hadvig <jhadvig@redhat.com>
 
 # Image metadata
+ENV PORT                  8001
 ENV NODEJS_VERSION        0.10
 ENV IMAGE_DESCRIPTION     Node.js 0.10
 ENV IMAGE_TAGS            node,nodejs,nodejs010
-ENV IMAGE_EXPOSE_SERVICES 8080:http
+ENV IMAGE_EXPOSE_SERVICES ${PORT}:http
 
 RUN yum-config-manager --enable rhel-server-rhscl-7-rpms && \
     yum-config-manager --enable rhel-7-server-optional-rpms && \
@@ -18,4 +19,4 @@ RUN yum-config-manager --enable rhel-server-rhscl-7-rpms && \
 
 USER default
 
-EXPOSE 8080
+EXPOSE ${PORT}
