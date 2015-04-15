@@ -6,6 +6,7 @@ FROM openshift/base-rhel7
 MAINTAINER Jakub Hadvig <jhadvig@redhat.com>
 
 # Image metadata
+ENV FOO                   testity
 ENV PORT                  8001
 ENV NODEJS_VERSION        0.10
 ENV IMAGE_DESCRIPTION     Node.js 0.10
