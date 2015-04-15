@@ -42,6 +42,8 @@ var server = http.createServer(function (req, res) {
 		res.write('OS CPU count: ' + os.cpus().length + '\n');
 		res.write('OS CPU model: ' + os.cpus()[0].model + '\n');
 		res.write('OS CPU speed: ' + os.cpus()[0].speed + 'mhz\n');
+    res.write(JSON.stringify(process.env));
+		res.write('done env');
 		res.end('\n');
 
 	});
